@@ -1,0 +1,11 @@
+(function(expression){
+    console.log(eval(expression))})("2+3*6-7");
+
+// (function(){})()   -- 선언과 동시에 사용 
+
+(function(string){console.log(parseInt(string) === 34)})("34");
+(function(value){
+    console.log(isNaN(value));  //true
+    console.log(isFinite(value));  //false 
+})("hello"/ 3);
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="hello" onclick="backgroundColor()">안녕하세요</h1>
+    <h1 id="hi">JS 초보에용</h1>
+
+</body>
+<script>
+    document.getElementById('hello').style.fontSize = '16px';
+    // document.getElementById('hello').style.backgroundColor = 'red';
+    // document.body.style.backgroundColor = 'yellow';
+    document.getElementById('hi').innerHTML = 'JS고수임';
+
+    function backgroundColor() {
+        document.getElementById('hello').style.backgroundColor = 'skyblue';
+    }
+</script>
+
+</html>

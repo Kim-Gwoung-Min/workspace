@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종합 실습 2</title>
+</head>
+
+<body>
+    <div>월화수목금토일</div>
+    <hr>
+
+
+</body>
+<script>
+    let dayOfWeek = prompt("월~일요일 입력, 다른 거 입력하면 안돼~");
+    let message;
+
+    switch (dayOfWeek) {
+        case "월":
+        case "화":
+        case "수":
+        case "목":
+            message = `${dayOfWeek}요일 은 출근 ..ㅜㅠ`;
+            break;
+        case "금":
+        case "토":
+        case "일":
+            message = `${dayOfWeek}요일 은 휴일 !ㅡ&*&*ㅡ!`;
+            break;
+        default:
+            message = '월~일요일만 입력가능 ^^';
+    }
+    document.write(`<h3>${message}</h3>`);
+</script>
+
+</html>

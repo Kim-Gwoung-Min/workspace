@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <span class="car-title">상품명</span>
+            <span class="car-price">가격</span>
+        </div>
+    </div>
+</body>
+<script>
+    var car2 = {
+        name: '소나타',
+        price: [50000, 3000, 40000]
+    };
+
+    document.querySelector('.car-title').innerHTML = car2['name'];
+    document.querySelector('.car-price').innerHTML = car2.price[1];
+
+    console.log(car2['price'][1]);
+    console.log(car2.price[2]);
+</script>
+
+</html>

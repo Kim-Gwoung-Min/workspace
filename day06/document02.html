@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>name을 이용한 선택</title>
+</head>
+
+<body>
+    <h1>name을 속성을 이용한 선택</h1>
+    <form name="join-form">
+        <div>
+            <input type="text" name="id" placeholder="아이디">
+        </div>
+        <div>
+            <input type="password" name="password" placeholder="패스워드">
+        </div>
+        <!-- <button type="button"></button>  -->
+        <input type="checkbox" name="language" value="c" onclick="clickCheck()">C
+        <input type="checkbox" name="language" value="java" onclick="clickCheck()">Java
+        <input type="checkbox" name="language" value="python" onclick="clickCheck()">Python
+        <div>
+            <input type="button" class="send" value="로그인" onclick="send()">
+        </div>
+        <!-- <input type="radio" name="gender" value="남">
+        <input type="radio" name="gender" value="여"> -->
+    </form>
+</body>
+<!-- button -> 기본 type submit   -->
+<!-- input type button -> button -->
+<!-- button을 그냥 사용할거면 type을 button꼭 줘야함  -->
+<script>
+    // 요기서 id가져오면 페이지 열때마다 빈값 가져와서 아이디를 입력해주세여 뜸
+    // const id = document.getElementsByName("id"); //send함수 눌러야 id를 가져와야함
+    // console.log(id[0]);
+
+    //전체 체크 / 다시 한번눌렀을땐 true대신 false. 
+    const checkboxes = document.getElementsByName("language");
+    checkboxes.forEach(checkbox => checkbox.checked = true);
+
+    function clickCheck() {
+        const checkboxes = document.getElementsByName("language");
+        checkboxes.forEach(checkbox => checkbox.checked);
+    }
+
+
+    function send() {
+        const id = document.getElementsByName("id"); //send함수 눌러야 id를 가져와야함
+        console.log(id[0].value)
+        // 유효성 검사
+        if (!id[0].value) {
+            alert("아이디를 입력해주세요");
+        } else {
+            alert(`${id[0].value}`);
+        }
+    }
+    // 사용자가 입력한 값   -> Value로 갖고옴
+    // 미리 작성한 값     -> innerHTML로 갖고옴
+</script>
+
+</html>

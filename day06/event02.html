@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클릭 이벤트 - 실습</title>
+    <style>
+        #square-container {
+            margin: 0 auto;
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        div.square {
+            width: 150px;
+            height: 150px;
+            border: 0.5px solid #e0e0e0;
+            background-color: skyblue;
+            font-size: 48px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="text" name="name" placeholder="이름">
+        <input type="button" value="등록">
+    </div>
+    <div id="square-container">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+</body>
+<script>
+    // 이름을 입력하고 등록버튼을 클릭한다.
+    // 각 사각형을 클릭하면 순서대로 성, 이름이 나오게 된다.
+    // 입력 예) 한동석
+    // 출력 예) 한  동  석 
+    // 이름이 두 글자라면, 마지막 사걱형에는 😍를 출력한다.
+    // 입력 예) 이 찬
+    // 출력 예) 이 찬  😍 
+
+    //버튼을 누르면 name에 입력받은 값을 
+    // class square 나눠서 이름 출력
+    const button = document.querySelector('input[type="button"]');
+    const squares = document.querySelectorAll('.square');
+    const input = document.querySelector('input[type="text"]');
+
+    let name = '';
+    let nameIdx = 0;
+
+    button.addEventListener('click', () => {
+        name = input.value;
+        nameIdx = 0;
+    });
+
+    squares.forEach(square => {
+        square.addEventListener('click', () => {
+            if (name === '') return;
+
+            const fullName = name.split(' ');
+            let lastName= '';
+            let firstName = '';
+
+            if(fullName.length ===2){
+                
+            }
+        })
+    })
+    // const button = document.querySelector('input[type="button"]');
+    // const squares = document.querySelectorAll('.square');
+    // const input = document.querySelector('input[type="text"]');
+
+    // let name = '';
+    // let nameIndex = 0;
+
+    // button.addEventListener('click', () => {
+    //     name = input.value;
+    //     nameIndex = 0;
+    // });
+
+    // squares.forEach(square => {
+    //     square.addEventListener('click', () => {
+    //         if (name === '') return;
+
+    //         const fullName = name.split(' ');
+    //         let lastName = '';
+    //         let firstName = '';
+
+    //         if (fullName.length === 2) {
+    //             lastName = fullName[0];
+    //             firstName = fullName[1];
+    //         } else {
+    //             lastName = fullName[0];
+    //             firstName = fullName[0].substring(1);
+    //         }
+
+    //         if (nameIndex < lastName.length) {
+    //             square.textContent = lastName[nameIndex];
+    //         } else if (nameIndex < lastName.length + firstName.length + 1) {
+    //             square.textContent = ' ';
+    //         } else {
+    //             square.textContent = name.length === 2 ? '😍' : '';
+    //         }
+
+    //         nameIndex++;
+    //     });
+    // });
+</script>
+
+</html>
